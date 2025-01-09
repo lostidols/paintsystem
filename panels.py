@@ -210,7 +210,7 @@ class MAT_PT_Brush(Panel):
     def poll(cls, context):
         ps = PaintSystem(context)
         obj = ps.active_object
-        return obj.mode == 'TEXTURE_PAINT'
+    return obj is not None and obj.mode == 'TEXTURE_PAINT'
 
     def draw(self, context):
         layout = self.layout
